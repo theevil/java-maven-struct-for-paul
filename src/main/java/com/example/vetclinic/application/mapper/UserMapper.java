@@ -10,6 +10,6 @@ import java.util.stream.Collectors;
 @Mapper(componentModel = "spring")
 public interface UserMapper {
 
-    @Mapping(target = "roles", expression = "java(user.getRoles().stream().map(r -> r.getName()).collect(Collectors.toSet()))")
+    @Mapping(target = "roles", expression = "java(user.getRoles().stream().map(r -> r.getName()).collect(java.util.stream.Collectors.toSet()))")
     UserDTO toDto(User user);
 }
